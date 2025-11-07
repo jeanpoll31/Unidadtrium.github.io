@@ -1,0 +1,463 @@
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="icono.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Unidad TRIUM - Página Principal</title>
+</head>
+<body>
+    <header class="header">
+        <h2 class="titulo__principal">
+            <a href="index.html" class="enlace__principal">Clínica Unidad <span class="gradiente">TRIUM</span></a>
+        </h2>
+        <div class="nav__barra">
+            <button class="menu__boton"  id="menu__boton">☰</button>
+            <nav>
+                <ul class="lista__navegador menu__oculto">
+                    <li class="item"><a href="index.html" target="_self" class="enlace">Inicio</a></li>
+                    <li class="item"><a href="" target="_blank" class="enlace">Sobre Nosotros</a></li>
+                    <li class="item"><a href="Especialidades.html" target="_blank" class="enlace">Especialidades y Servicios</a></li>
+                    <li class="item"><a href="" target="_blank" class="enlace">Contacto</a></li>
+                    <li class="item"><a href="" target="_blank" class="enlace">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <main class="main">
+            <div class="main__contenido">
+                <img src="Krs.png" alt="logo_TRIUM" class="logo">
+                <article class="contenido">
+                    <h1 class="titulo">Clínica Unidad TRIUM</h1>
+                    <p class="texto">
+                        Bienvenido al sitio web oficial de la Clínica Unidad TRIUM.
+                        Clínica Especializada en cirugía plástica , fisioterapia y medicina hiperbárica.
+                        Para más información de nuestros servicios haga click <a href="Especialidades.html">Aquí.</a>                 
+                    </p>
+                </article>
+            </div>
+        </main>
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <p>Unidad TRIUM: Salud integral a tu alcance. Para más información <a href="">Contáctenos</a>
+            ©copy; 2025-2026 Clínica Unidad TRIUM. Desarrollado para el Proyecto de desarrollo Socio Tecnológico de la Nación de la Universidad Politécnica Andrés
+        Eloy Blanco</p>
+        </div>
+    </footer>
+    <script src="Desplegar.js"></script>
+</body>
+</html>
+
+CSS:
+*{
+    box-sizing: border-box;
+}
+
+body ,h1,h2,h3,h4,h5,p,div,ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    --color_principal_azul: #5454fe;
+    --color_fondo_gradiente: radial-gradient(circle, #bbb , #32197d);
+    --color_fondo: #32197d;
+    --footer_color: #111;
+    font-family: 'Times New Roman';
+}
+
+SECCION DEL HEADER
+
+.header{
+    width: 100%;
+    background-color: var(--color_principal_azul);
+    position: fixed;
+    box-shadow: 0 0 25px #020202;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+.titulo__principal{
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 10px #000;
+    order: 1;
+    margin-left: 25px;
+}
+
+.gradiente{
+    background-image: linear-gradient(to right , #06005e, #c0f );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.enlace__principal{
+    text-decoration: none;
+    color: #fff;
+}
+
+.item{
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.item:not(:last-child){
+    border-bottom: 1px solid #2a3075;
+    box-shadow: 0 1px 3px #0002;
+    padding-bottom: 10px;
+}
+
+.nav__barra{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu__boton{
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    z-index: 100;
+}
+
+.menu__oculto {
+    transform: translateX(-100%);
+}
+
+.lista__navegador{
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: auto;
+    background-color: var(--color_principal_azul);
+    width: 250px;
+    height: calc(100vh - 60px);
+    box-shadow: 0 8px 16px  #0002;
+    padding: 10px;
+    z-index: 99;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.enlace{
+    background-color: var(--color_principal_azul);
+    border-radius: 0;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    transition: background-color .5s , border-radius .5s;
+    display: block;
+}
+
+.enlace:hover{
+    background-color: #5d6afe;
+    border-radius: 5px;
+}
+
+SECCIÓN DEL CONTENIDO PRINCIPAL
+
+.main{
+    height: calc(100vh - 60px);
+    background-image: var(--color_fondo_gradiente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap;
+    width: 100%;
+    color: #fff;
+    padding-top: 80px;
+}
+
+.main__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    height: auto;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.titulo{
+    font-size: 3rem;
+
+}
+
+.contenido{
+    width: 100%;
+}
+
+.texto{
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.texto a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.texto a:hover{
+    color: var(--footer_color);
+}
+
+.titulo , .texto{
+    filter: drop-shadow(0 0 10px #000);
+}
+
+.logo{
+    width: fit-content;
+    filter: drop-shadow(0 0 12px #000);
+}
+
+.texto,.titulo,.logo{
+    animation: aparecer 3s ease-out .9 both;
+}
+
+SECCIÓN DEL FOOTER
+
+.footer{
+    display: flex;
+    width: 100%;
+    background-color: var(--footer_color);
+    height: 60px;
+    color: #aaa;
+    justify-content:center;
+    align-items:center;
+    border-top: 1px solid #666;
+    box-shadow: 0 0 12px #000;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.footer__contenedor{
+    width: 100%; 
+    max-width: 800px;
+    padding: 0 20px; 
+}
+
+MEDIA QUERIES Y ANIMACIONES
+
+@media (max-width: 769px) {
+    .titulo__principal{
+        font-size: 1.6rem;
+        margin-left: 0;
+    }
+
+    .footer{
+        font-size: .6rem;
+    }
+
+    .texto{
+        font-weight:100;
+        line-height: 34px;
+    }
+}
+
+@keyframes aparecer {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(20%);
+        opacity:inherit;
+    }
+}
+
+CSS en otras paginas:
+
+*{
+    box-sizing: border-box;
+}
+
+body ,h1,h2,h3,h4,h5,p,div,ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    --color_principal_azul: #5454fe;
+    --color_fondo_gradiente: radial-gradient(circle, #bbb , #32197d);
+    --color_fondo: #32197d;
+    --footer_color: #111;
+    font-family: 'Times New Roman';
+}
+
+SECCIÓN DEL HEADER
+
+.header{
+    width: 100%;
+    background-color: var(--color_principal_azul);
+    position: fixed;
+    box-shadow: 0 0 25px #020202;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+}
+
+.titulo__principal{
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 10px #000;
+    order: 1;
+    margin-left: 25px;
+}
+
+.gradiente{
+    background-image: linear-gradient(to right , #06005e, #c0f );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.enlace__principal{
+    text-decoration: none;
+    color: #fff;
+}
+
+.item{
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.item:not(:last-child){
+    border-bottom: 1px solid #2a3075;
+    box-shadow: 0 1px 3px #0002;
+    padding-bottom: 10px; /* Para dar espacio */
+}
+
+.nav__barra{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.menu__boton{
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    z-index: 100;
+}
+
+.menu__oculto {
+    transform: translateX(-100%);
+}
+
+.lista__navegador{
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: auto;
+    background-color: var(--color_principal_azul);
+    width: 250px;
+    height: calc(100vh - 60px);
+    box-shadow: 0 8px 16px  #0002;
+    padding: 10px;
+    z-index: 99;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.enlace{
+    background-color: var(--color_principal_azul);
+    border-radius: 0;
+    text-decoration: none;
+    padding: 10px;
+    padding-right: 30px;
+    color: #fff;
+    transition: background-color .5s , border-radius .5s;
+    display: block;
+}
+
+.enlace:hover{
+    background-color: #5d6afe;
+    border-radius: 5px;
+}
+
+SECCIÓN DEL CONTENIDO PRINCIPAL
+
+.main{
+    height: calc(100vh - 60px);
+    background-image: var(--color_fondo_gradiente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap;
+    width: 100%;
+    gap: 30px;
+    color: #fff;
+    padding-top: 80px;
+}
+
+.main__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 900px; /* Nuevo: limita el ancho máximo */
+    margin: 0 auto; /* Nuevo: centra el contenido */
+}
+
+SECCIÓN DEL CONTENIDO PRINCIPAL
+
+.footer{
+    display: flex;
+    width: 100%;
+    background-color: var(--footer_color);
+    height: 60px;
+    color: #aaa;
+    justify-content:center;
+    align-items:center;
+    border-top: 1px solid #666;
+    box-shadow: 0 0 12px #000;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.footer__contenedor{
+    width: 100%; /* Ahora ocupa el 100% del espacio */
+    max-width: 800px; /* Limita su ancho en pantallas grandes */
+    padding: 0 20px; /* Evita que el texto toque los bordes */
+}
+
+MEDIA QUERIES Y ANIMACIONES
+
+@media (max-width: 769px) {
+    .titulo__principal{
+        font-size: 1.6rem;
+        margin-left: 0;
+    }
+
+    .footer{
+        font-size: .6rem;
+    }
+}
