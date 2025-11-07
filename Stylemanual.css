@@ -225,3 +225,85 @@
     text-decoration: none;
     cursor: pointer;
 }
+/* ======================================================= */
+/* MEDIA QUERIES PARA RESPONSIVE DESIGN (Móviles/Tabletas)  */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Contenedor Principal */
+    .manual-container {
+        /* Permite que el contenedor use casi todo el ancho disponible, 
+           pero deja un pequeño margen en los lados. */
+        width: 95%; 
+        max-width: none; /* Elimina el límite máximo para pantallas grandes */
+        padding: 15px; /* Reduce el relleno interior para ganar espacio */
+        margin: 20px auto; /* Reduce el margen superior/inferior */
+    }
+
+    /* 2. Encabezados y Párrafos */
+    h2, h3 {
+        font-size: 1.4rem; /* Reduce el tamaño de los títulos */
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    p, li {
+        font-size: 0.95rem; /* Asegura legibilidad con un tamaño adecuado */
+    }
+
+    /* 3. Capturas de Pantalla */
+    .manual-captura {
+        /* Las imágenes ya están al 100%, pero aseguramos que el contenedor 
+           no tenga un alto fijo que pueda cortarlas en móvil */
+        height: auto;
+        /* Aseguramos que la imagen no tenga un background-color blanco innecesario 
+           si la transparencia se ve mal */
+        background-color: transparent; 
+        margin-bottom: 20px; /* Separación que ya habías agregado */
+    }
+
+    .manual-captura img {
+        /* Asegura que la imagen sea totalmente fluida */
+        width: 100%;
+        height: auto;
+        object-fit: contain; /* Es más seguro para capturas que 'cover' */
+    }
+
+    /* 4. Lista de Navegación del Header (Si aún usas el menú desplegable) */
+    .lista__navegador {
+        /* Ajustes de diseño si el menú se vuelve un menú hamburguesa */
+        width: 100%; 
+        left: 0;
+        right: 0;
+        top: 3.5rem; /* Asegúrate de que baje lo suficiente si el header es más alto */
+    }
+
+    /* ======================================================= */
+/* MEDIA QUERIES PARA RESPONSIVE DESIGN (Móviles/Tabletas)  */
+/* Esto va al final de Stylemanual.css */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    /* ... (resto de tus reglas responsive) ... */
+
+    /* 5. Estilos del Footer */
+    .footer {
+        /* Permite que el texto se apile en varias líneas si es necesario */
+        height: auto; 
+        min-height: 80px; /* Asegura un mínimo de altura */
+        padding: 10px 15px; /* Añade relleno interno para que el texto no toque los bordes */
+        /* Flexbox es importante para centrar el contenido */
+        flex-direction: column; 
+        justify-content: center;
+    }
+
+    .footer__contenedor p {
+        /* Reduce el tamaño del texto para móviles */
+        font-size: 0.75rem; 
+        text-align: center;
+        /* Asegura que el texto use todo el espacio disponible */
+        width: 100%; 
+    }
+}
+}
